@@ -97,7 +97,7 @@ begin
 set new.yearly_pay=new.hourly_pay*new.working_hours;
 end $$
 
-delimiter ;
+delimiter ; # Before semicolon space must
 
 insert into employees(employee_id, first_name, last_name, phone_no, hourly_pay, working_hours, hire_date)
 values (7, 'ravi', 'kumar', '+91-9876543210', 18.75, 2000, '2023-01-08');
@@ -136,5 +136,13 @@ set hourly_pay=21
 drop trigger before_update_employees;
 drop trigger if exists after_update_employees;
 
+create view employee_summary as
+select first_name,last_name,phone_no from employees;
+select * from employee_summary;
+
 select * from employees; 
+
+
+
+
 
