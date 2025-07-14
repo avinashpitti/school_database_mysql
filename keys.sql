@@ -65,7 +65,6 @@ delete from city where city_id=6; # can't delete or update a parent row; a forei
 # delete from customers where customer_id=24; # It gets deleted because it's a child row
 
 # If you delete first from child table then you can delete from the parent table without error
-#Learn delete cascade
 
 alter table customers
 drop foreign key customers_ibfk_1; # This is a system generated foreign key
@@ -73,4 +72,13 @@ drop foreign key customers_ibfk_1; # This is a system generated foreign key
 alter table customers
 add constraint fk_city # adding constraint name as we like
 foreign key (city_id)
+references city(city_id)
+on delete cascade;
+
+# Delete cascade automatically deletes all related child rows when the parent row is deleted
+
+delete from city where city_id=6; 
+
+select * from city;
+select * from customers;
 
