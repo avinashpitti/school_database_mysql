@@ -64,5 +64,6 @@ delete from city where city_id=6; # can't delete or update a parent row; a forei
 
 # delete from customers where customer_id=24; # It gets deleted because it's a child row
 
-
+# If you delete first from child table then you can delete from the parent table without error
+#Learn delete cascade
 
