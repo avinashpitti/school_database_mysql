@@ -209,8 +209,58 @@ SET department_id = CASE
     WHEN employee_id = 7 THEN 1
 END;
 
-
 select * from employees;
+
+select * from employees
+where hire_date like "2023-01-05";
+
+select * from employees
+where hire_date like "____-01-02"; # 4 underscores for year
+
+select * from employees
+where hire_date like "____-__-03";
+
+select * from employees
+where first_name like "s%"; # It considers the first letter of first_name
+
+select * from employees
+where first_name like "%k"; # It considers the last letter of first_name
+
+select * from employees
+where first_name like "_a%"; # It considers the second letter of first_name because we gave space(underscore)
+
+select * from employees
+where last_name like "__ee_%"; # It consider 3 and 4th character of last_name
+
+select * from employees
+where hire_date in("2023-01-01","2023-01-02","2023-01-03");
+# It returns only two employees because no one was hired on 2023-01-01
+
+select * from departments;
+
+select * from students;
+
+select * from students
+where hindi=87 or english=54;
+
+select * from students 
+where name in ("rakesh","srinu");
+
+select * from students
+where hindi in (86,87);
+
+select * from students;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
