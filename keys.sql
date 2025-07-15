@@ -80,5 +80,26 @@ on delete cascade;
 delete from city where city_id=6; 
 
 select * from city;
+
 select * from customers;
+
+select * from customers
+limit 2;	# It gives first 2 rows
+
+select * from customers
+limit 1,2;	# here 1 is an offset means it leaves 1st row then gives 2 rows.
+
+select * from customers
+order by lastname; # It gives alphabetical order in ascending(mentioning asc is optional)
+
+select * from customers
+order by lastname desc; #  It gives in descending(desc)
+
+select * from customers
+order by lastname desc
+limit 3; # It limits values to 3 in descending order.
+
+
+
+
 
